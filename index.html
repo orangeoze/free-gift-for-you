@@ -3,7 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free 5000 Link Group WhatsApp</title>
+<title>Unlock Gift</title>
+
+<script>
+/* ==============================
+   EDIT 4 BAHAGIAN DI BAWAH SAHAJA
+   ============================== */
+
+var TAJUK = "Free 5000 Link Group WhatsApp Untuk Iklan";
+
+var DESCRIPTION = "Digunakan oleh ramai peniaga online untuk percepatkan promosi.";
+
+var LINK_AFFILIATE = "https://revoobit-academy.super.site/m1-digital-mastery/shopee-affiliate";
+
+var LINK_GIFT = "https://youtube.com/shorts/8Krl40Q9egI?si=rdSKlIzyoqM6Ni22";
+
+/* ==============================
+   JANGAN UBAH CODE DI BAWAH
+   ============================== */
+</script>
 
 <style>
 body{
@@ -41,8 +59,27 @@ h1{
 .desc{
     font-size:15px;
     color:#555;
-    margin-bottom:25px;
+    margin-bottom:10px;
     line-height:1.6;
+}
+
+.instruction{
+    font-size:14px;
+    color:#333;
+    font-weight:600;
+    margin-top:10px;
+}
+
+.arrow{
+    font-size:28px;
+    margin:10px 0;
+    animation: bounce 1.2s infinite;
+    color:#ff7a00;
+}
+
+@keyframes bounce{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(8px);}
 }
 
 .btn{
@@ -61,17 +98,9 @@ h1{
     color:#fff;
 }
 
-.unlock:hover{
-    background:#e96e00;
-}
-
 .download{
     background:#2ecc71;
     color:#fff;
-}
-
-.download:hover{
-    background:#27ae60;
 }
 
 #gift{
@@ -119,12 +148,15 @@ h1{
 
     <div class="badge">Percuma Akses</div>
 
-    <h1>Free 5000 Link Group WhatsApp Untuk Iklan</h1>
+    <h1 id="tajuk"></h1>
 
-    <div class="desc">
-        Digunakan oleh ramai peniaga online untuk percepatkan promosi.
-        Klik butang di bawah untuk buka akses.
+    <div class="desc" id="description"></div>
+
+    <div class="instruction">
+        Klik butang di bawah untuk buka akses
     </div>
+
+    <div class="arrow">⬇</div>
 
     <button id="unlockBtn" class="btn unlock" onclick="unlock()">🔓 Buka Akses Sekarang</button>
 
@@ -139,7 +171,7 @@ h1{
     <div id="gift">
         <h3>Akses Berjaya Dibuka</h3>
         <p>Anda boleh muat turun fail di bawah.</p>
-        <a href="https://youtube.com/shorts/8Krl40Q9egI?si=rdSKlIzyoqM6Ni22" target="_blank" class="btn download">
+        <a id="giftLink" target="_blank" class="btn download">
             📥 Download Fail Sekarang
         </a>
     </div>
@@ -151,8 +183,12 @@ h1{
 </div>
 
 <script>
+document.getElementById("tajuk").innerText = TAJUK;
+document.getElementById("description").innerText = DESCRIPTION;
+document.getElementById("giftLink").href = LINK_GIFT;
+
 function unlock(){
-    window.open("https://revoobit-academy.super.site/m1-digital-mastery/shopee-affiliate", "_blank");
+    window.open(LINK_AFFILIATE, "_blank");
 
     document.getElementById("unlockBtn").disabled = true;
 
@@ -165,7 +201,7 @@ function unlock(){
 
     var width = 0;
     var interval = setInterval(function(){
-        width += 2; // 2% setiap 100ms = 5 saat
+        width += 2;
         progressBar.style.width = width + "%";
 
         if(width >= 100){
