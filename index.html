@@ -81,9 +81,33 @@ h1{
     border-top:1px solid #eee;
 }
 
+.progress-container{
+    width:100%;
+    background:#eee;
+    border-radius:30px;
+    overflow:hidden;
+    height:12px;
+    margin-top:25px;
+    display:none;
+}
+
+.progress-bar{
+    height:100%;
+    width:0%;
+    background:linear-gradient(90deg,#ff7a00,#ffb347);
+    transition:width 0.1s linear;
+}
+
+.loading-text{
+    font-size:14px;
+    color:#888;
+    margin-top:10px;
+    display:none;
+}
+
 .small{
     font-size:12px;
-    color:#888;
+    color:#aaa;
     margin-top:20px;
 }
 </style>
@@ -98,12 +122,19 @@ h1{
     <h1>Free 5000 Link Group WhatsApp Untuk Iklan</h1>
 
     <div class="desc">
-        Senarai ini digunakan oleh ramai peniaga online untuk
-        mempercepatkan promosi produk mereka.
+        Digunakan oleh ramai peniaga online untuk percepatkan promosi.
         Klik butang di bawah untuk buka akses.
     </div>
 
-    <button class="btn unlock" onclick="unlock()">🔓 Buka Akses Sekarang</button>
+    <button id="unlockBtn" class="btn unlock" onclick="unlock()">🔓 Buka Akses Sekarang</button>
+
+    <div class="progress-container" id="progressContainer">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <div class="loading-text" id="loadingText">
+        Sedang membuka akses...
+    </div>
 
     <div id="gift">
         <h3>Akses Berjaya Dibuka</h3>
@@ -114,7 +145,7 @@ h1{
     </div>
 
     <div class="small">
-        Pastikan anda klik butang akses terlebih dahulu sebelum muat turun.
+        Pastikan anda klik butang akses terlebih dahulu.
     </div>
 
 </div>
@@ -122,7 +153,27 @@ h1{
 <script>
 function unlock(){
     window.open("https://revoobit-academy.super.site/m1-digital-mastery/shopee-affiliate", "_blank");
-    document.getElementById("gift").style.display = "block";
+
+    document.getElementById("unlockBtn").disabled = true;
+
+    var progressContainer = document.getElementById("progressContainer");
+    var progressBar = document.getElementById("progressBar");
+    var loadingText = document.getElementById("loadingText");
+
+    progressContainer.style.display = "block";
+    loadingText.style.display = "block";
+
+    var width = 0;
+    var interval = setInterval(function(){
+        width += 2; // 2% setiap 100ms = 5 saat
+        progressBar.style.width = width + "%";
+
+        if(width >= 100){
+            clearInterval(interval);
+            loadingText.style.display = "none";
+            document.getElementById("gift").style.display = "block";
+        }
+    },100);
 }
 </script>
 
