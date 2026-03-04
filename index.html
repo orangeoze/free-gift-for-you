@@ -139,6 +139,37 @@ h1{
     color:#aaa;
     margin-top:20px;
 }
+
+.arrow-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.arrow {
+    font-size: 28px;
+    animation: bounce 1.2s infinite;
+}
+
+.arrow:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.arrow:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(8px);
+        opacity: 0.6;
+    }
+}
 </style>
 </head>
 
@@ -156,11 +187,11 @@ h1{
         Klik butang di bawah untuk buka akses
     </div>
 
-    <div class="arrow-container">
-        <div class="arrow">⬇</div>
-        <div class="arrow">⬇</div>
-        <div class="arrow">⬇</div>
-    </div>
+    <div class="arrow-wrapper">
+    <div class="arrow">↓</div>
+    <div class="arrow">↓</div>
+    <div class="arrow">↓</div>
+</div>
 
     <button id="unlockBtn" class="btn unlock" onclick="unlock()">🔓 Buka Akses Sekarang</button>
 
